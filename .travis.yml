@@ -1,7 +1,18 @@
 language: php
+# Travis CI Configuration File
 
 php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - 5.6
+  - hhvm
+# Tell Travis CI we're using PHP
+language: php
+
+# Build matrix options
 matrix:
+  fast_finish: true
   include:
     - php: 5.5
       env: WP_TRAVISCI=travis:js
@@ -18,6 +29,35 @@ matrix:
     - php: hhvm
       env: WP_TRAVISCI=travis:phpunit
   allow_failures:
+    - php:
+      - 5.3
+      - 5.4
+      - 5.5
+      - 5.6
+      - hhvm
     - php: 5.6
     - php: hhvm
   fast_finish: true
+
+mysql:
+  database: test
+  username: root
+  encoding: utf8
+env:
+  - WP_VERSION=master WP_MULTISITE=1
+
+# Before install, failures in this section will result in build status 'errored'
+before_install:
+  - sudo apt-get update > /dev/null
+
+install:
+  # install php packages required for running a web server from drush on php 5.3
+  - sudo apt-get install -y --force-yes php5-cgi php5-mysql
+
+  # add composer's global bin directory to the path
+  # see: https://github.com/drush-ops/drush#install---composer
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+  # install drush globally
+  - composer global require drush/drush:dev-master
+
