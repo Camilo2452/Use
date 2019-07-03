@@ -8,9 +8,3 @@ sudo: false
 
 addons:
   mariadb: '10.1'
-
-before_install:
-- composer self-update
-
-install:
-- composer install
