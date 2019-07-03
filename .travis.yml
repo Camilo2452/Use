@@ -31,7 +31,7 @@ matrix:
       - 7.2
       - 7.3
       - hhvm
-    - php: 7.2
+    - php: 7.3
     - php: hhvm
   fast_finish: true
 
