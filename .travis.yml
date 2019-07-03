@@ -7,33 +7,7 @@ php:
   - 7.2
   - 7.3
   - hhvm
-# Tell Travis CI we're using PHP
-language: php
 
-# Build matrix options
-matrix:
-  fast_finish: true
-  include:
-    - php: 7.0
-      env: WP_TRAVISCI=travis:js
-    - php: 7.1
-      env: WP_TRAVISCI=travis:phpunit
-    - php: 7.2
-      env: WP_TRAVISCI=travis:phpunit
-    - php: 7.3
-    env: WP_TRAVISCI=travis:phpunit
-    - php: hhvm
-    
-  allow_failures:
-    - php:
-      - 7.0
-      - 7.1
-      - 7.2
-      - 7.3
-      - hhvm
-    - php: 7.3
-    - php: hhvm
-  fast_finish: true
 
 mysql:
   database: test
