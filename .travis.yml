@@ -1,15 +1,26 @@
 language: php
 
 php:
-  - 7.3
-  - hhvm
+- 7.0
+- 7.1
 
-  before_script:
-  - composer install --dev
-  
-   script: phpunit --configuration $DB.phpunit.xml
- 
-mysql:
-  database: test
-  username: root
-  encoding: utf8
+services:
+- mysql
+
+before_script:
+- cp .env.travis .env
+- mysql -e 'create database testing;'
+- composer self-update
+- composer install --no-interaction
+- php artisan key:generate
+- php artisan migrate --seed
+
+script:
+    - vendor/bin/phpunit
+
+notifications:
+email:
+    recipients:
+        - camilocool352@gmail.com
+    on_success: always
+    on_failure: always
