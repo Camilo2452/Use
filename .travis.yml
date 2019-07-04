@@ -7,7 +7,6 @@ php:
 services:
   - mysql
 
-
 env:
   global:
 
