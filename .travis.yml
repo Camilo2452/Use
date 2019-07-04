@@ -20,4 +20,4 @@ before_install:
   - mysql -e 'CREATE DATABASE test;'
   
 script:
-  - bin/atoum --test-all
+docker exec -e TRAVIS_JOB_ID="$TRAVIS_JOB_ID" -e TRAVIS_BRANCH="$TRAVIS_BRANCH" ...
