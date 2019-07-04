@@ -19,4 +19,4 @@ env:
 before_install:
   - mysql -e 'CREATE DATABASE test;'
   
-script: vendor/bin/phpunit
+script: phpunit --configuration phpunit_$DB.xml --coverage-text
