@@ -17,10 +17,3 @@ before_script:
 
 script:
     - vendor/bin/phpunit
-
-notifications:
-email:
-    recipients:
-        - camilocool352@gmail.com
-    on_success: always
-    on_failure: always
