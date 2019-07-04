@@ -18,4 +18,6 @@ env:
 
 before_install:
   - mysql -e 'CREATE DATABASE test;'
-  - coverage-php
+  
+script:  
+ - composer test -- --coverage-clover=coverage.xml
