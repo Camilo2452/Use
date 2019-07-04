@@ -21,4 +21,9 @@ before_install:
 
 before_script:
  
-  - composer install
+ - curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+ - composer global require "phpunit/php-invoker=1.1.*"
+ - composer install
+  
+  
+  
