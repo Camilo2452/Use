@@ -19,5 +19,4 @@ env:
 before_install:
   - mysql -e 'CREATE DATABASE test;'
   
-script:
- home/travis --test-all
+script: vendor/bin/phpunit
