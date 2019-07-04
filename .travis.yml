@@ -18,4 +18,4 @@ env:
 
 before_install:
   - mysql -e 'CREATE DATABASE test;'
-  - coverage-html
+  - coverage-php
