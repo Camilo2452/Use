@@ -19,5 +19,5 @@ env:
 before_install:
   - mysql -e 'CREATE DATABASE test;'
   
-script:  
-    --coverage-clover=coverage.xml
+script:
+  - bin/atoum --test-all
