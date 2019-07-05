@@ -14,8 +14,18 @@ before_script:
 services:
  - mysql
  
-script:
-  script: bash scripts/deploy.sh
+deploy:
+  skip-cleanup: true
+  # Publish docs
+  provider: script
+  script: npm run test:deploy-results
+  on:
+    branch: build
+  # Test reports
+  provider: script
+  script: npm run test:deploy-results
+  on:
+    branch: build
  
 notifications:
  email: your_email
