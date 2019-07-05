@@ -2,19 +2,12 @@ language: php
 
 php:
   - '7.1'
+  env : WP_TRAVISCI = travis: phpunit
   - '7.2'
+  env : WP_TRAVISCI = travis: phpunit 
   - '7.3'
+  env : WP_TRAVISCI = travis: phpunit  
   
- matriz: 
-   - php : 7.1 
-     env : WP_TRAVISCI = travis: phpunit
-    
-   - php : 7.2 
-     env : WP_TRAVISCI = travis: phpunit 
-     
-   - php : 7.3 
-     env : WP_TRAVISCI = travis: phpunit  
-     
 services:
   - mysql
 
