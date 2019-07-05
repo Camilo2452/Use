@@ -14,7 +14,10 @@ before_script:
 services:
  - mysql
  
-deploy:
+script:
+  script: bash scripts/deploy.sh
+ 
+ deploy:
   skip-cleanup: true
   # Publish docs
   provider: script
