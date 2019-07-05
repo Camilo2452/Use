@@ -20,7 +20,5 @@ services:
  
 before_script: composer install
 
-script: 'Se realizo'
-         
 
  
