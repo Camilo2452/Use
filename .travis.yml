@@ -10,12 +10,12 @@ php:
 
 before_script:
   - mysql -e 'CREATE DATABASE test;'
-script: phpunit
 
 services:
  - mysql
  
 script:
  - phpunit
+ 
 notifications:
  email: your_email
