@@ -14,10 +14,7 @@ before_script:
 services:
  - mysql
  
-script:
-  script: bash scripts/deploy.sh
- 
- deploy:
+  deploy:
   skip-cleanup: true
   # Publish docs
   provider: script
@@ -30,5 +27,9 @@ script:
   on:
     branch: build
  
+script:
+  script: bash scripts/deploy.sh
+ 
+
 notifications:
  email: your_email
