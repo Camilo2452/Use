@@ -15,7 +15,7 @@ services:
  - mysql
  
 script:
- - phpunit
+  script: bash scripts/deploy.sh
  
 notifications:
  email: your_email
