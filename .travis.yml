@@ -29,5 +29,3 @@ env:
 
 before_install:
   - mysql -e 'CREATE DATABASE test;'
-
-script: ./civic.sh
