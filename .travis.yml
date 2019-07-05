@@ -3,12 +3,8 @@ language: php
 matrix:
   include:
   - php: 7.1
-      dist: precise
   - php: 7.2
-      dist: precise
   - php: 7.3
-      dist: precise
-  
 services:
   - mysql
 
