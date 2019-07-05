@@ -1,12 +1,20 @@
 language: php
 
 php:
-  - '7.0'
   - '7.1'
   - '7.2'
   - '7.3'
-  - '7.4'
   
+ matriz: 
+   - php : 7.1 
+     env : WP_TRAVISCI = travis: phpunit
+    
+   - php : 7.2 
+     env : WP_TRAVISCI = travis: phpunit 
+     
+   - php : 7.3 
+     env : WP_TRAVISCI = travis: phpunit  
+     
 services:
   - mysql
 
@@ -21,3 +29,6 @@ env:
 
 before_install:
   - mysql -e 'CREATE DATABASE test;'
+   - phpenv config-rm xdebug.ini
+
+script: ./civic.sh
