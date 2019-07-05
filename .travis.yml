@@ -29,6 +29,5 @@ env:
 
 before_install:
   - mysql -e 'CREATE DATABASE test;'
-   - phpenv config-rm xdebug.ini
 
 script: ./civic.sh
